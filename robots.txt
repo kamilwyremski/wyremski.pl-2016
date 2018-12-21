@@ -1,0 +1,7 @@
+
+User-agent: *
+Disallow: /modules
+Disallow: /tmp 
+Disallow: /vendor
+
+Sitemap: https://wyremski.pl/sitemap.xml

@@ -1,0 +1,92 @@
+
+{% extends "main.tpl" %}
+
+{% block javascript %}
+	{{ parent() }}
+	{% if not settings.amp %}
+		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCaptcha&render=explicit" async defer></script>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div id="contact" class="page">
+	<div id="contact_inside" class="container">
+		<div class="text-center">
+		{% if lang=='en' %}
+			<h1>Contact</h1>
+			<br>
+			<p>Please contact me at <a href="mailto:kamil.wyremski@gmail.com" title="Write to me!">kamil.wyremski@gmail.com</a> or use this contact form</p>
+		{% else %}
+			<h1>Kontakt</h1>
+			<br>
+			<p>Jeśli chcesz się ze mną skontaktować napisz pod adres <a href="mailto:kamil.wyremski@gmail.com" title="Napisz do mnie">kamil.wyremski@gmail.com</a> lub skorzystaj z poniższego formularza</p>
+		{% endif %}
+		</div>
+		{% if settings.amp %}
+			{% if lang=='en' %}
+				<p>Form available only <a href="/en/contact" title="Kontakt">in desktop version</a></p>
+			{% else %}
+				<p>Formularz dostępny tylko <a href="/kontakt" title="Kontakt">w wersji desktop</a></p>
+			{% endif %}
+		{% else %}
+			<br>
+			{% if contact_info %}
+				<div class="alert alert-success" role="alert" style="margin-bottom:0" id="js_przewin_strone"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {% if lang=='en' %}Message was sent succesfully{% else %}Wiadomość została poprawnie wysłana{% endif %}</div><br>
+			{% elseif contact_error %}
+				<div class="alert alert-danger" role="alert" style="margin-bottom:0" id="js_przewin_strone"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {% if lang=='en' %}Error! The message was not sent{% else %}Wiadomość nie została wysłana{% endif %}</div><br>
+			{% endif %}
+			<form class="form-horizontal" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="action" value="send_message">
+				<div class="form-group {% if contact_error.email %}has-error{% endif %}">
+					<label for="email" class="col-sm-2 control-label">{% if lang=='en' %}Email{% else %}Adres email{% endif %}</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="email" name="email" placeholder="{% if lang=='en' %}example@domain.com{% else %}email@domena.pl{% endif %}" required value="{% if input.email %}{{input.email}}{% endif %}" title="{% if lang=='en' %}Here enter Your email address{% else %}Tu wpisz swój adres email{% endif %}">
+						{% if contact_error.email %}<p class='text-danger'>{{contact_error.email}}</p>{% endif %}
+						<p class="small" style="margin-bottom:0; margin-top: 2px;">{% if lang=='en' %}The email address will only be used to answer the request. It will not be processed in any other way.{% else %}Adres email posłuży tylko do udzielenia odpowiedzi na zapytanie. Nie będzie przetwarzany w żaden inny sposób.{% endif %}</p>
+					</div>
+				</div>
+				<div class="form-group {% if contact_error.subject %}has-error{% endif %}">
+					<label for="subject" class="col-sm-2 control-label">{% if lang=='en' %}Subject{% else %}Temat{% endif %}</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="subject" name="subject" placeholder="{% if lang=='en' %}Message Subject{% else %}Temat wiadomości{% endif %}" required value="{% if input.subject %}{{input.subject}}{% else %}{% if lang=='en' %}Request from wyremski.pl{% else %}Zapytanie ze strony wyremski.pl{% endif %}{% endif %}" title="{% if lang=='en' %}Here enter subject of message{% else %}Tu wpisz temat wiadoości{% endif %}">
+						{% if contact_error.subject %}<p class='text-danger'>{{contact_error.subject}}</p>{% endif %}
+					</div>
+				</div>
+				<div class="form-group {% if contact_error.message %}has-error{% endif %}">
+					<label for="message" class="col-sm-2 control-label">{% if lang=='en' %}Message{% else %}Wiadomość{% endif %}</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="4" name="message" id="message" required placeholder="{% if lang=='en' %}My message...{% else %}Moja wiadomość{% endif %}" title="{% if lang=='en' %}Here enter Your message{% else %}Tu wpisz swoją wiadomość{% endif %}">{% if input.message %}{{input.message}}{% endif %}</textarea>
+						{% if contact_error.message %}<p class='text-danger'>{{contact_error.message}}</p>{% endif %}
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="attachment" class="col-sm-2 control-label">{% if lang=='en' %}Attachment{% else %}Załącznik{% endif %}</label>
+					<div class="col-sm-10">
+						<span class="btn btn-default btn-file"><input type="file" name="attachment" id="attachment" title="{% if lang=='en' %}You can add attachment to message{% else %}Tutaj możesz dodać załącznik do swojej wiadomosci{% endif %}"></span>
+					</div>
+				</div>
+				<div class="form-group {% if contact_error.captcha %}has-error{% endif %}">
+					<label class="col-sm-2 control-label">Captcha</label>
+					<div class="col-sm-8">
+						<div id="g-recaptcha"></div>
+						{% if contact_error.captcha %}<p class='text-danger'>{{contact_error.captcha}}</p>{% endif %}
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<label><input type="checkbox" name="rules" required> {% if lang=='en' %}I accept <a href="#" data-toggle="modal" data-target="#privacy_policy" title="Privacy policy">privacy policy</a>{% else %}Akceptuję <a href="#" data-toggle="modal" data-target="#privacy_policy" title="Polityka prywatności">politykę prywatności</a>{% endif %}</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12">
+						<input id="submit" name="submit" type="submit" value="{% if lang=='en' %}SEND MESSAGE{% else %}WYŚLIJ WIADOMOŚĆ{% endif %}" class="btn btn-primary" disabled>
+					</div>
+				</div>
+			</form>
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}
+

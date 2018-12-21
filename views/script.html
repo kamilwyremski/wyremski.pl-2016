@@ -1,0 +1,26 @@
+
+{% extends "main.tpl" %}
+
+{% block css %}
+	{% if settings.amp==0 %}
+		<style>{{ source("css/lightbox.min.css") }}</style>
+	{% endif %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+	{% if settings.amp==0 %}
+		<script>{{ source("js/lightbox.min.js") }}</script>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div id="script">
+
+	{% include 'scripts/' ~ script ~ '.html' %}
+	
+</div>
+
+{% endblock %}

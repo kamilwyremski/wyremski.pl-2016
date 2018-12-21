@@ -1,0 +1,18 @@
+
+{% extends "main.tpl" %}
+
+{% block head %}
+	<meta name="robots" content="noindex">
+{% endblock %}
+	
+{% block content %}
+
+<div class="container text-center page padding_bottom">
+	<h1>{% if lang=='en' %}Erorr 404{% else %}Błąd 404{% endif %}</h1>
+	<img src="{{ settings.base_url }}/upload/images/404.png" alt="Błąd 404" class="img-responsive" id="image_404">
+	<h3>{% if lang=='en' %}Page not existed{% else %}Strona nie istnieje{% endif %}</h3>
+	<p>{% if lang=='en' %}The page you are looking for has been moved, deleted, or simply never existed.{% else %}Strona którą szukasz została przesunięta, usunięta albo po prostu nigdy nie istniała.{% endif %}</p>
+	<br><br>
+</div>
+
+{% endblock %}

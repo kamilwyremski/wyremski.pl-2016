@@ -1,0 +1,40 @@
+
+{% extends "main.tpl" %}
+
+{% block content %}
+
+<div id="projects" class="page background_grey padding_big_bottom">
+	<div class="container text-center">
+		{% if lang=='en' %}
+			<h1>Portfolio</h1>
+			<h3>Welcome to my showcase</h3>
+		{% else %}
+			<h1>Projekty stron www</h1>
+			<h3>Poniżej prezentuję moje portfolio: strony i serwisy internetowe, które zbudowałem</h3>
+		{% endif %}
+	</div>
+	<div class="container-full">
+	
+		{% include 'projects.tpl' %}
+		
+	</div>
+	{% if settings.amp==0 %}
+		<div class="container text-center">
+			<p class="container_text padding_big_top">
+				{% for item in projects %}
+					<a href="{{item.url}}" title="{{item.name}}" target="_blank" rel="nofollow noopener">{{item.name}}</a>{% if not loop.last %},{% endif %} 
+				{% endfor %}
+			</p>
+			<br>
+			{% if lang=='en' %}
+				<p style="font-size: 28px;">Looking forward to work with you</p>
+				<p>Please do not hesitate to contact me with any questions</p>
+			{% else %}
+				<p style="font-size: 28px;">Dziękuję</p>
+				<p>za to, że wybraliście właśnie mnie!</p>
+			{% endif %}
+		</div>
+	{% endif %}
+</div>
+
+{% endblock %}

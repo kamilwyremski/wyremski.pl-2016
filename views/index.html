@@ -1,0 +1,425 @@
+
+{% extends "main.tpl" %}
+
+{% block content %}
+
+<header id="header">
+	<div class="container-full">
+		<div id="header_inside">
+			<h1>Kamil Wyremski</h1>
+			<h3 id="text_typed" class="hidden-xs"><span class="text">{% if lang=='en' %}Idea. Project. Work. {% else %}Pomysł. Projekt. Realizacja. {% endif %}</span><span class="cursor">|</span></h3>
+			<h3>{% if lang=='en' %}Best Modern web designs.<br>Through innovative design your brand can achieve remarkable value.{% else %}Projektowanie nowoczesnych stron internetowych.<br>Poprzez innowacyjny design Twoja marka zyska niezwykłą wartość.{% endif %}</h3>
+		</div>
+	</div>
+</header>
+<section class="container padding_big_top padding_big_bottom" id="introduction">
+	<div class="text-center">
+		<h2>{% if lang=='en' %}Web Application Developer{% else %}Programowanie{% endif %}</h2>
+		<br>
+		<h4>{% if lang=='en' %}PERFECTION IS ACHIEVED NOT WHEN THERE IS NOTHING MORE TO ADD,<br>BUT WHEN THERE IS NOTHING LEFT TO TAKE AWAY{% else %}DOSKONAŁOŚĆ OSIĄGASZ NIE W MOMENCIE KIEDY NIE MASZ JUŻ NIC WIĘCEJ DO DODANIA,<br>ALE WTEDY KIEDY NIE MASZ JUŻ NIC DO USUNIĘCIA{% endif %}</h4>
+	</div>
+	<div class="two_columns center_mobile padding_top">
+		{% if lang=='en' %}
+			<p>I love challenging myself so I can grow, to become better programmer. There are no bad ideas. With time you can make anything better. What is the most important, is not to give up, to push yourself to go forward to get better experience and create with higher quality. Get inspiration from life, from people around you. </p>
+			<p>My customers most common goal is to promote a business or product. My goal is to satisfy their all needs and requirements. My work is characterized by the highest quality and professionalism. No detail is left alone. To create successful website, I Create a clear customer experience vision, I’m working on understanding who your customers are, I plan your website so it can create an emotional connection with your customers. Graphics, proportions, fonts, structure, colors, contents are crated after hours of planning, testing, comparing so it can meet the highest expectations. One of the most important keys of successful website or other projects is user experience. Better user experience, better chances for success of the business. Websites created by me are user friendly, graphics are modern, easy to browse by any visitor you may have, wanting them to comeback for more. The goal is to create a positive experience for your client.</p>
+			<p>Websites I create are made to perfectly resemble your high quality brand and products. Of course I will use the latest available technologies.</p>
+			<p>I look forward to hearing from you.</p>
+		{% else %}
+			<p>Przygodę z projektowaniem aplikacji komputerowych zacząłem jako nastolatek w 2002 roku. Były to wtedy proste strony internetowe oraz gry i programy tworzone na system Windows. Od 2013 roku programowaniem zajmuję się zawodowo. W tym czasie stworzyłem dziesiątki stron internetowych oraz aplikacji webowych i mobilnych. Ciągle uczę się nowych umiejętności, tak aby moje projekty były zgodne z nowoczesnymi standardami.</p>
+			<p>Wyzwania to dla mnie pasja. Na każdym kroku napotykam wyzwania, które każą mi być lepszym i lepszym. Nie ma złych pomysłów, są tylko nieoptymalne rozwiązania, które potrzebują odpowiedniej ilości czasu, aby być idealne. Grunt to się nie poddawać i iść naprzód. Zdobywać doświadczenie i budować nową jakość!</p>
+			<p>Wystarczy spojrzeć na świat wokół nas, aby zobaczyć, że inspiracją może być iskra, która staje się trybikiem w tworzeniu. Natchnienie można znaleźć wszędzie - może być na okładce gazety, w reklamie lub na innej stronie internetowej, może to być krajobraz, piosenka... to może być cokolwiek.</p>
+			<p>Opracowałem projekty dla różnych klientów, ale wszystkie miały wspólny cel: promowanie firmy lub produktu. Finalny projekt zawsze cechuje profesjonalizm we wszystkich jego aspektach. Żaden szczegół nie powinien być pozostawiony przypadkowi: od obrazów, proporcji, czcionki, struktury, kolorów, aż do samej treści. "Wrażenia użytkownika" (ang. "User Experience"), czyli to co dana osoba czuje podczas korzystania z serwisu, m.in. łatwość obsługi, sensowny układ strony, uczucia, które są przekazywane, są niezwykle istotne w moich projektach - ich celem jest, aby doświadczenia użytkowników były jak najbardziej pozytywne, aby chcieli wrócić na daną stronę internetową.</p>
+			<p>Moją specjalnością jest stworzenie projektu i struktury strony, które będą odzwierciedlać osobowość oraz specyfikę danej marki. Oczywiście do tego celu wykorzystam najnowsze dostępne technologie. Zapraszam do współpracy!</p>
+		{% endif %}
+	</div>
+</section>
+{% if settings.amp==0 %}
+	<section id="about_me" class="padding_big_top padding_bottom">
+		<div class="container" itemscope itemtype="http://schema.org/Person">
+			<div class="col-sm-2 hidden-xs padding_bottom">
+				<{% if settings.amp %}amp-{% endif %}img {% if settings.amp==0 %} src="upload/images/loading.gif" data-{% endif %}src="upload/images/kamil_wyremski.jpg" alt="Kamil Wyremski" class="lazyload img-responsive" itemprop="image">
+			</div>
+			<div class="col-sm-10 center_mobile padding_bottom">
+				<h2 itemprop="name">Kamil Wyremski</h2>
+				<h4 itemprop="jobTitle">{% if lang=='en' %}Full Stack Web Developer{% else %}Programista / Full Stack Web Developer{% endif %}</h4>
+				<p><span itemprop="brand">{% if lang=='en' %}Front-End and Back-End Web Developer.{% else %}Programista (front-end i back-end).{% endif %}</span> {% if lang=='en' %}Specializing in creating secure interactive web pages and web applications{% else %}Specjalność: tworzenie bezpiecznych stron i serwisów internetowych{% endif %}</p>
+				<div class="hide">
+					<span itemprop="email">kamil.wyremski@gmail.com</span>
+					<span itemprop="telephone">+48692413725</span>
+					<span itemprop="telephone">+359988742931</span>
+					<span itemprop="url">{{settings.base_url}}</span>
+					<span itemprop="birthDate">1988</span>
+					<span itemprop="homeLocation">{% if lang=='en' %}Poland{% else %}Polska{% endif %}, 62-300 Września</span>
+				</div>
+				<a href="https://www.facebook.com/wyremskipl/" title="{% if lang=='en' %}My profile on Facebook{% else %}Mój profil na Facebook{% endif %}" target="_blank" rel="noopener"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+				<a href="https://plus.google.com/u/0/102325004299979143485?rel=author" title="{% if lang=='en' %}My profile on Google Plus{% else %}Mój profil na Google Plus{% endif %}" target="_blank" rel="publisher noopener"><i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i></a>
+				<a href="skype:kamil.wyremski" title="{% if lang=='en' %}Call me on Skype!{% else %}Zadzwoń do mnie przez Skype!{% endif %}"><i class="fa fa-skype fa-2x" aria-hidden="true"></i></a>
+				<a href="mailto:kamil.wyremski@gmail.com" title="{% if lang=='en' %}Write to me!{% else %}Napisz do mnie!{% endif %}"><i class="fa fa-at fa-2x" aria-hidden="true"></i></a>
+				<a href="http://blog.wyremski.pl" title="{% if lang=='en' %}View my blog!{% else %}Zobacz mój blog!{% endif %}" target="_blank" rel="noopener"><i class="fa fa-external-link-square fa-2x" aria-hidden="true"></i></a>
+				<a href="feed" title="{% if lang=='en' %}RSS Channel{% else %}Kanał RSS - bądź na bieżąco z nowymi skryptami{% endif %}" target="_blank" rel="noopener"><i class="fa fa-rss-square fa-2x" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</section>
+{% endif %}
+<section class="text-center background_grey padding_big_top padding_big_bottom" id="skills">
+	<div class="container container_text_big padding_bottom">
+		{% if lang=='en' %}
+			<h2>Skills & Expertise</h2>
+			<br>
+			<p>I have been doing web pages for several years now. As new technologies are introduced, I try to use them in my projects, making my pages more and more functional, and their appearance does not diverge from the appearance of pages created by large, professional companies.</p>
+		{% else %}
+			<h2>Umiejętności</h2>
+			<br>
+			<p>Poniżej znajduje się spis moich umiejętności. W miarę wprowadzania na rynek nowych technologii wykorzystuję je przy swoich projektach, dzięki czemu tworzone przeze mnie strony są bardziej funkcjonalne, a ich wygląd nie odbiega od wyglądu stron tworzonych przez duże, profesjonalne firmy. </p>
+		{% endif %}
+	</div>
+	<div class="container">
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image"></div>
+				{% if lang=='en' %}
+					<h4>WEBSITE DESIGN</h4>
+					<p class="small">Creating static or dynamic websites and web applications compatible with W3C</p>
+				{% else %}
+					<h4>TWORZENIE STRON</h4>
+					<p class="small">Tworzenie stron statyczych lub dynamicznych oraz aplikacji internetowych zgodnych ze standardem <a href="http://blog.wyremski.pl/poprawne-wyswietlanie-strony/" target="_blank" title="Standard W3C" rel="noopener">W3C</a></p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image image_2"></div>
+				{% if lang=='en' %}
+					<h4>SEO SERVICES</h4>
+					<p class="small">Creating SEO friendly websites and search engine optimization consulting for websites and domains</p>
+				{% else %}
+					<h4>KONSULTACJA SEO</h4>
+					<p class="small">Optymalizacja stron www pod kątem pozycjonowania domeny, tworzenie stron zgodnych z <a href="http://blog.wyremski.pl/optymalizacja-strony-www/" target="_blank" title="Strony www zgodne z SEO" rel="noopener">wymaganiami SEO</a></p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image image_3"></div>
+				{% if lang=='en' %}
+					<h4>MARKETING</h4>
+					<p class="small">Internet, Social media marketing strategy and services. Landing pages</p>
+				{% else %}
+					<h4>MARKETING</h4>
+					<p class="small">Planowanie i realizacja kampanii marketingowych w mediach społecznościowych, tworzenie tzw. "landing page"</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image image_4"></div>
+				{% if lang=='en' %}
+					<h4>ADVERTISING</h4>
+					<p class="small">Get more customers with successful advertising campaign!</p>
+				{% else %}
+					<h4>REKLAMY</h4>
+					<p class="small">Zaplanuj ze mną swoją kampanię reklam online, a pozyskasz kolejnych klientów dla swojej firmy!</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image image_5"></div>
+				{% if lang=='en' %}
+					<h4>RESPONSIVE WEB DESIGN</h4>
+					<p class="small">Your website accurately responds to the medium that is being viewed on. Desktops and all mobile devices</p>
+				{% else %}
+					<h4>RESPONSYWNOŚĆ</h4>
+					<p class="small">Tworzone przeze mnie strony są responsywne (RWD) - poprawnie wyświetlają się na wszystkich urządzeniach mobilnych</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image image_6"></div>
+				{% if lang=='en' %}
+					<h4>GRAPHIC DESIGN</h4>
+					<p class="small">Modern, visually innovative concepts according to the latest trends</p>
+				{% else %}
+					<h4>GRAFIKA</h4>
+					<p class="small">Tworzenie profesjonalnej grafiki komputerowej, dzięki której strony www stają się bardziej atrakcyjne i zachęcają do powrotu na stronę</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image image_7"></div>
+				{% if lang=='en' %}
+					<h4>PROGRAMMING</h4>
+					<p class="small">Highest quality programming of HTML, (X|D)HTML, CSS and JavaScript, back-end code snippets</p>
+				{% else %}
+					<h4>KOD STRONY</h4>
+					<p class="small">Kod tworzonych przeze mnie stron internetowych jest zgodny ze współczesnymi standardami, ma uporządkowaną, "czystą" strukturę</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="skills animatable fadeInUp">
+				<div class="skills_image image_8"></div>
+				{% if lang=='en' %}
+					<h4>FAST WEBSITE</h4>
+					<p class="small">With advanced caching techniques and minimizing, your website runs smooth and fast!</p>
+				{% else %}
+					<h4>SZYBKOŚĆ</h4>
+					<p class="small">Stosuję zaawansowane techniki cachowania oraz minimalizacji kodu, dzięki czemu Twoja strona działa znacznie szybciej!</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+<section id="projects_index" class="text-center padding_top padding_big_bottom">
+	<div class="container">
+		<h2>Portfolio</h2>
+		{% if lang=='en' %}
+			<h4>Some of my recent works. Also see <a href="/en/projects" title="My projects">my other projects</a></h4>
+		{% else %}
+			<h4>Kilka moich ostatnich prac. Zobacz także <a href="/projekty" title="Moje projekty">moje pozostałe projekty</a></h4>
+		{% endif %}
+	</div>
+	<div class="container-full">
+
+		{% include 'projects.tpl' %}
+		
+	</div>
+	{% if settings.amp==0 %}
+		<div class="container text-center">
+			{% if lang=='en' %}
+				<p class="h2">Looking forward to work with you</p>
+				<br>
+				<p>Please do not hesitate to contact me with any questions</p>
+			{% else %}
+				<p class="h2">Dziękuję</p>
+				<br>
+				<p>za to, że wybraliście właśnie mnie!</p>
+			{% endif %}
+		</div>
+	{% endif %}
+</section>
+<section id="scripts_index" class="text-center padding_big_top padding_bottom">
+	<div class="container">
+		{% if lang=='en' %}
+			<h2>Scripts</h2>
+			<h4>Finished Web scripts by which You can quickly create your own website!</h4>
+			<h4>See <a href="/en/scripts" title="Web scripts">all my web scripts</a></h4>
+		{% else %}
+			<h2>Skrypty</h2>
+			<h4>Gotowe strony internetowe, dzięki którym w szybki sposób stworzysz swój własny portal!</h4>
+			<h4>Zobacz także <a href="/skrypty" title="Skrypty stron internetowych">wszystkie moje skrypty</a></h4>
+		{% endif %}
+		<div class="padding_top">
+			{% for item in scripts %}
+				<div class="col-md-4">
+					<div class="scripts_index animatable fadeInUp padding_big_bottom" itemscope itemtype="http://schema.org/Product">
+						{% if settings.amp==0 %}
+							<a href="{% if lang=='en' %}en/script{% else %}skrypt{% endif %}/{{item.url}}" title="{{item.name}}" class="thumbnail">
+								<img src="upload/images/loading.gif" class="lazyload" data-src="{{item.image}}" alt="{{item.name}}" itemprop="image">
+								<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+							</a>
+						{% endif %}
+						<a href="/{% if lang=='en' %}en/script{% else %}skrypt{% endif %}/{{item.url}}" title="{{item.name}}" itemprop="url"><h3 itemprop="name">{{item.name}}</h3></a>
+						<hr>
+						<p itemprop="description">{{item.description}}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+<section class="text-center padding_big_top padding_big_bottom" id="technologies">
+	<div class="container container_text_big padding_bottom">
+		{% if lang=='en' %}
+			<h2>Technologies</h2>
+			<br>
+			<p>My skills include the programming and design, front-end (HTML5, CSS3, JavaScript, Angular, React), and the back-end (PHP, Symfony, Yii, Laravel), administration Linux and performance optimization (Apache, SQL database). Here is an outline of the technology in which it works.</p>
+		{% else %}
+			<h2>Technologie</h2>
+			<br>
+			<p>Posiadam szeroki zakres umiejętności, które obejmują projektowanie, front-end (HTML5, CSS3, JavaScript, Angular, React, VUE), oraz back-end (PHP, Symfony, Yii, Laravel), administrację systemem Linux oraz wdrażanie i optymalizację wydajności (Apache, bazy SQL). Poniżej przedstawiam zarys technologii w których pracuję.</p>
+		{% endif %}
+	</div>
+	<div class="container">
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image"></div>
+				<h4>PHP</h4>
+				{% if lang=='en' %}
+					<p class="small">Interpreted scripting programming language designed to generate web pages (Back-End).</p>
+				{% else %}
+					<p class="small">Interpretowany skryptowy język programowania stworzony do generowania stron internetowych (Back-End).</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_2"></div>
+				<h4>JAVASCRIPT</h4>
+				{% if lang=='en' %}
+					<p class="small">Scripting language, usually running on the client side (Front-End).</p>
+				{% else %}
+					<p class="small">Skryptowy język programowania, działający zazwyczaj po stronie klienta (Front-End).</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_3"></div>
+				<h4>SYMFONY</h4>
+				{% if lang=='en' %}
+					<p class="small">PHP framework based on the MVC design pattern and using the latest programming standards.</p>
+				{% else %}
+					<p class="small"><a href="http://blog.wyremski.pl/framework-symfony/" title="Symfony" target="_blank" rel="noopener">Symfony</a> to framework PHP bazujący na wzorcu projektowym MVC i wykorzystujący najnowsze standardy programowania.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_4"></div>
+				<h4>WORDPRESS</h4>
+				{% if lang=='en' %}
+					<p class="small">Software (Back-End and Front-End) used to create web pages (usually use as a blog platform).</p>
+				{% else %}
+					<p class="small">Oprogramowanie (Back-End i Front-End) pozwalające na tworzenie stron interenetowych (z założenia jest to <a href="http://blog.wyremski.pl/o-wordpress-ie/" title="Wordpress" target="_blank" rel="noopener">platforma blogowa</a>).</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_5"></div>
+				<h4>PRESTASHOP</h4>
+				{% if lang=='en' %}
+					<p class="small">Open, most popular e-commerce software (Back-End and Front-End).</p>
+				{% else %}
+					<p class="small">Otwarte, najpopularniejsze oprogramowanie sklepów internetowych (Back-End i Front-End).</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_6"></div>
+				<h4>TWITTER BOOTSTRAP</h4>
+				{% if lang=='en' %}
+					<p class="small">Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
+				{% else %}
+					<p class="small"><a href="http://blog.wyremski.pl/framework-bootstrap/" title="Twitter Bootstrap" target="_blank" rel="noopener">Framework CSS</a> zawierający zestaw przydatnych narzędzi ułatwiających tworzenie interfejsu graficznego stron oraz aplikacji internetowych.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_7"></div>
+				<h4>JQUERY</h4>
+				{% if lang=='en' %}
+					<p class="small">A lightweight programming library for JavaScript. It primarily allows for the easy manipulation of the DOM tree.</p>
+				{% else %}
+					<p class="small">Lekka biblioteka programistyczna dla języka JavaScript, ułatwiająca m.in. manipulację drzewem DOM.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_8"></div>
+				<h4>ANGULAR</h4>
+				{% if lang=='en' %}
+					<p class="small">A JavaScript framework that supports the creation of single page web applications (AKA SPAs).</p>
+				{% else %}
+					<p class="small"><a href="http://blog.wyremski.pl/angularjs-framework-do-javascript/" title="AngularJS" target="_blank" rel="noopener">Angular</a> to framework oparty na języku JavaScript, wspomagający tworzenie i rozwój aplikacji internetowych (Front-End).</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_9"></div>
+				<h4>HTML</h4>
+				{% if lang=='en' %}
+					<p class="small">Language used to create and present web pages. The latest version is marked as HTML5.</p>
+				{% else %}
+					<p class="small">Hipertekstowy język znaczników wykorzystywany do tworzenia i prezentowania stron internetowych www.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_10"></div>
+				<h4>CSS</h4>
+				{% if lang=='en' %}
+					<p class="small">Cascading Style Sheets is a language used to describe how a web page is displayed. The latest version is marked as CSS3.</p>
+				{% else %}
+					<p class="small">CSS (Cascading Style Sheets) to język służący do opisu formy prezentacji (wyświetlania) stron WWW.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_11"></div>
+				<h4>ADOBE PHOTOSHOP</h4>
+				{% if lang=='en' %}
+					<p class="small">An extensive graphics program designed for creating and processing raster graphics.</p>
+				{% else %}
+					<p class="small">Rozbudowany program graficzny przeznaczony do tworzenia i obróbki grafiki rastrowej.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_12"></div>
+				<h4>NODEJS</h4>
+				{% if lang=='en' %}
+					<p class="small">A JavaScript runtime environment designed mainly to create web servers that can handle many concurrent requests.</p>
+				{% else %}
+					<p class="small"><a href="http://blog.wyremski.pl/wprowadzenie-do-node-js/" title="Wprowadzenie do node.js" target="_blank" rel="noopener">NodeJS</a> to środowisko uruchomieniowe zaprojektowane do tworzenia aplikacji internetowych, szczególnie serwerów www napisanych w języku JavaScript.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_13"></div>
+				<h4>REACT</h4>
+				{% if lang=='en' %}
+					<p class="small">JavaScript library used to manage and quickly transition layouts in web applications.</p>
+				{% else %}
+					<p class="small">Biblioteka JavaScript wykorzystywana do tworzenia interfejsów graficznych aplikacji internetowych.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_14"></div>
+				<h4>LINUX</h4>
+				{% if lang=='en' %}
+					<p class="small">Operating system distributed as free and open source software (FOSS).</p>
+				{% else %}
+					<p class="small">Nowoczesny, wielozadaniowy system operacyjny klasy Unix.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_15"></div>
+				<h4>MYSQL</h4>
+				{% if lang=='en' %}
+					<p class="small">A popular open source relational database. MySQL server is available for all popular platforms and is known for its reliability and speed.</p>
+				{% else %}
+					<p class="small">Wolnodostępny system zarządzania relacyjnymi bazami danych. Serwer MySQL dostępny jest dla wszystkich popularnych platform systemowych.</p>
+				{% endif %}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<div class="technologies animatable fadeInUp">
+				<div class="technologies_image image_16"></div>
+				<h4>GIT</h4>
+				{% if lang=='en' %}
+					<p class="small">A distributed version control system used across the industry for collaboration and code management.</p>
+				{% else %}
+					<p class="small">Rozproszony system kontroli wersji. Służy do kontrolowanego wprowadzania zmian w projekcie.</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

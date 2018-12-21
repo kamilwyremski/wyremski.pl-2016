@@ -1,0 +1,128 @@
+{"scripts":[
+	{
+        "name" : {
+			"pl" : "NOTICE2",
+			"en" : "NOTICE2"
+		},
+		"title" : {
+			"pl" : "NOTICE2 - skrypt ogłoszeń",
+			"en" : "NOTICE2 - script of announcements"
+		},
+		"url" : {
+			"pl" : "notice2",
+			"en" : "notice2"
+		},
+		"image" : "upload/scripts/notice2/notice2.jpg",
+		"description" : {
+			"pl" : "NOTICE2 to uniwersalny, nowoczesny skrypt pozwalający stworzyć stronę z ogłoszeniami online",
+			"en" : "NOTICE2 is a modern script that allows you to create website with ads"
+		},
+		"favicon" : "upload/scripts/notice2/favicon.png",
+		"date_update" : "2017-05-01"
+    },
+	{
+        "name" : {
+			"pl" : "DEMOTY2",
+			"en" : "DEMOTY2"
+		},
+		"title" : {
+			"pl" : "DEMOTY2 - skrypt strony z demotywatorami i memami",
+			"en" : "DEMOTY2 - web script for demotivators and memes"
+		},
+		"url" : {
+			"pl" : "demoty2",
+			"en" : "demoty2"
+		},
+		"image" : "upload/scripts/demoty2/demoty2.jpg",
+		"description" : {
+			"pl" : "Demoty2 to skrypt dla strony pozwalającej tworzyć demotywatory, demoty oraz memy",
+			"en" : "Demoty2 is a script for a website with demotivators, demots and memes"
+		},
+		"favicon" : "upload/scripts/demoty2/favicon.png",
+		"date_update" : "2018-07-15"
+    },
+	{
+        "name" : {
+			"pl" : "CUADRO",
+			"en" : "CUADRO"
+		},
+		"title" : {
+			"pl" : "CUADRO - obrazki, filmy i zdjęcia",
+			"en" : "CUADRO - images, photos and movies"
+		},
+		"url" : {
+			"pl" : "cuadro",
+			"en" : "cuadro"
+		},
+		"image" : "upload/scripts/cuadro/cuadro.jpg",
+		"description" : {
+			"pl" : "CUADRO to uniwersalny skrypt dla stron internetowych z obrazkami, zdjęciami i filmami video",
+			"en" : "CUADRO is a script that allows you to create website with pictures, photos and movies"
+		},
+		"favicon" : "upload/scripts/notice2/favicon.png",
+		"date_update" : "2018-03-15"
+    },
+	{
+        "name" : {
+			"pl" : "FESTA",
+			"en" : "FESTA"
+		},
+		"title" : {
+			"pl" : "FESTA - skrypt bazy noclegowej",
+			"en" : "FESTA - script of accommodation base"
+		},
+		"url" : {
+			"pl" : "festa",
+			"en" : "festa"
+		},
+		"image" : "upload/scripts/festa/festa.jpg",
+		"description" : {
+			"pl" : "Festa to nowoczesny skrypt umożliwiający stworzenie strony www z bazą miejsc noclegowych",
+			"en" : "Festa is a modern script that allows you to create a website with a base of accommodation"
+		},
+		"favicon" : "upload/scripts/festa/favicon.png",
+		"date_update" : "2017-02-01"
+    },	
+	{
+        "name" : {
+			"pl" : "HOLMES",
+			"en" : "HOLMES"
+		},
+		"title" : {
+			"pl" : "HOLMES - skrypt bazy nieruchomości",
+			"en" : "HOLMES - script or real estate"
+		},
+		"url" : {
+			"pl" : "holmes",
+			"en" : "holmes"
+		},
+		"image" : "upload/scripts/holmes/holmes.jpg",
+		"description" : {
+			"pl" : "Holmes to skrypt stron internetowych z ofertą nieruchomości, dla osób prywatnych lub agencji real estate",
+			"en" : "Real estate website for small or big real estate agencies"
+		},
+		"favicon" : "upload/scripts/holmes/favicon.png",
+		"date_update" : "2017-03-01"
+    },
+	{
+        "name" : {
+			"pl" : "EMPRESA",
+			"en" : "EMPRESA"
+		},
+		"title" : {
+			"pl" : "EMPRESA - skrypt katalogu firm",
+			"en" : "EMPRESA - script with list of companies"
+		},
+		"url" : {
+			"pl" : "empresa",
+			"en" : "empresa"
+		},
+		"image" : "upload/scripts/empresa/empresa.jpg",
+		"description" : {
+			"pl" : "Empresa to skrypt dla katalogów firm online - umożliwia stworzenie strony z listą firm lokalnych, krajowych lub międzynarodowych",
+			"en" : "Empresa is a script for online business directories - allows you to create website with a list of local, national or international companies"
+		},
+		"favicon" : "upload/scripts/empresa/favicon.png",
+		"date_update" : "2017-04-01"
+    }
+]}

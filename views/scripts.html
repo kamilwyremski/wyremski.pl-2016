@@ -1,0 +1,50 @@
+
+{% extends "main.tpl" %}
+
+{% block content %}
+
+<div class="page">
+	<div class="text-center container">
+		{% if lang=='en' %}
+			<h1>Websites Scripts</h1>
+			<h3>The easiest way to create your own website!</h3>
+		{% else %}
+			<h1>Skrypty stron internetowych</h1>
+			<h3>Dzięki nim w szybki sposób stworzysz swój własny serwis internetowy</h3>
+		{% endif %}
+	</div>
+	<div id="scripts" class="container padding_top padding_bottom">
+		{% for item in scripts %}
+			<div class="row animatable fadeInUp" itemscope itemtype="http://schema.org/Product">
+				{% if settings.amp==0 and loop.index%2 %}
+					<div class="col-sm-6 col-xs-12 scripts hidden-xs">
+						<a href="{{settings.base_url}}/{% if lang=='en' %}en/script{% else %}skrypt{% endif %}/{{item.url}}" title="{{item.name}}">
+							<img src="upload/images/loading.gif" class="lazyload" data-src="{{item.image}}" alt="{{item.name}}" itemprop="image">
+							<i class="fa fa-external-link" aria-hidden="true"></i>
+						</a>
+					</div>
+				{% endif %}
+				<div class="col-sm-6 col-xs-12 scripts text-center">
+					<div class="scripts_description">
+						<a href="{{settings.base_url}}/{% if lang=='en' %}en/script{% else %}skrypt{% endif %}/{{item.url}}" title="{{item.name}}"><h2 itemprop="name">{{item.name}}</h2></a>
+						<hr>
+						<p itemprop="description">{{item.description}}</p>
+						{% if settings.amp==0 %}
+							<br><a href="{{settings.base_url}}/{% if lang=='en' %}en/script{% else %}skrypt{% endif %}/{{item.url}}" title="{{item.name}}" itemprop="url"><h4>{% if lang=='en' %}READ MORE{% else %}ZOBACZ{% endif %}</h4></a>
+						{% endif %}
+					</div>
+				</div>
+				{% if settings.amp==0 and loop.index%2==0 %}
+					<div class="col-sm-6 col-xs-12 scripts hidden-xs">
+						<a href="{{settings.base_url}}/{% if lang=='en' %}en/script{% else %}skrypt{% endif %}/{{item.url}}" title="{{item.name}}">
+							<img src="upload/images/loading.gif" class="lazyload" data-src="{{item.image}}" alt="{{item.name}}" itemprop="image">
+							<i class="fa fa-external-link" aria-hidden="true"></i>
+						</a>
+					</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

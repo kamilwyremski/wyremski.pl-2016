@@ -1,0 +1,81 @@
+body{
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+h2{
+	font-size: 1.7em; margin: 5px 0;
+}
+a{
+	color: #0a89c0;
+}
+a:hover{
+	color: #0d73a0;
+}
+.container, #header_inside, #script, .modal-content{
+	max-width: calc(100% - 70px); width: 700px; margin: auto; padding: 0 30px;
+}
+#header, #script, .page{
+	margin-top: 55px;
+}
+.navbar button, #text_typed, .scripts_index hr, #accept-cookies-checkbox, .skrypty hr, .navbar .nav .hidden-xs{
+	display: none;
+}
+.navbar{
+	background-color: #303030; padding: 10px; text-align: center;
+}
+.navbar .navbar-header a{
+	color: white; text-decoration: none; font-size: 1.5em; font: Arial sans-serif;
+}
+.navbar .nav{
+	padding:0; margin:8px 8px 0; text-transform: uppercase; font-size: 0.9em;
+}
+.navbar .nav li{
+	display: inline-block; padding: 4px 8px; margin: 2px;
+}
+.navbar .nav a{
+	color: white; text-decoration: none;
+}
+.lang-lbl[lang=pl]:after{content:"Polski"}
+.lang-lbl[lang=en]:after{content:"English"}
+#about_me, #introduction, #scripts, #skills, #technologies{
+	margin-top: 50px;
+}
+.skills{
+	margin-bottom: 30px;
+}
+.project{
+	margin: 30px 0;  padding-bottom: 30px; border-bottom: solid 1px #d3d3d3;
+}
+.scripts_index{
+	margin: 10px 0;  padding-bottom: 10px; border-bottom: solid 1px #d3d3d3;
+}
+.scripts{
+	margin: 10px 0;  padding-bottom: 10px; border-bottom: solid 1px #d3d3d3;
+}
+.scripts hr{
+	display: none;
+}
+#script .container{
+	padding: 20px 0; max-width: 100%;
+}
+#script .functions_inside{
+	padding: 5px 0;
+}
+#contact .form-group{
+	margin: 10px;
+}
+#contact input, #contact textarea{
+	padding: 5px; box-sizing: border-box; width: 100%; 
+}
+footer{
+	margin-top: 60px; border-top: solid 1px #d3d3d3; text-align: center; background-color: #303030; color: white; padding-bottom: 10px; padding-top: 10px; font-size: 0.8em;
+}
+footer a{
+	color: white; text-decoration: none;
+}
+footer a:hover{
+	text-decoration: underline; color: white;
+}
+/* cookies */
+#cookies-message{
+	border-top: solid 1px black; padding: 20px; text-align: center; background-color: #303030; color: white;
+}
